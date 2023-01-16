@@ -1,16 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./style.css" />
-  <title>Etch-a-Sketch</title>
-</head>
-<body>
-  
-  
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Etch-a-Sketch</title>
+  </head>
+  <body>
+    
+    <div class="main">
+      <div class="main__header">Etch-a-Sketch</div>
+      <div class="main__content">
+        <div class="main__toolbar">
+          <label cloass="main__color-picker"><input type="color" id="colorPicker"/></label>
+          <button class="main__color" id="color">Color</button>
+          <button class="main__rgb-color" id="rgbColor">RGB</button>
+          <button class="main__eraser" id="eraser">Eraser</button>
+          <button class="main__clear" id="clear">Clear</button>
+        </div>
+        <div class="main__board" id="board"></div>
+        <div id="sizebar" class="main__sizebar">
+          <h3 id="sizebarInfo"></h3>
+          <input type="range" id="sizebarSlider" value="16" min="1" max="64" />
+        </div>
+      </div>
+      
+    </div>
 
-  <script src="./script.js"></script>
-</body>
+    <script src="./script.js"></script>
+  </body>
 </html>
