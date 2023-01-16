@@ -1,6 +1,6 @@
 var currentColor = '#000000';
 var currentMode = "color";
-var currentSize = 16 ;
+var currentSize = 16;
 
 const colorPicker = document.getElementById('colorPicker');
 const colorButton = document.getElementById('color');
@@ -10,13 +10,6 @@ const clearButton = document.getElementById('clear');
 const board = document.getElementById('board');
 const sizebarInfo = document.getElementById('sizebarInfo');
 const sizebarSlider = document.getElementById('sizebarSlider');
-
-// colorPicker.addEventListener('change', setCurrentColor);
-// colorButton.addEventListener('click', setCurrentMode);
-// rgbButton.addEventListener('click', setCurrentMode);
-// eraserButton.addEventListener('click', setCurrentMode);
-// clearButton.addEventListener('click', clearBoard);
-// sizebarSlider.addEventListener('change', changeSize);
 
 colorPicker.oninput = (e) => setCurrentColor(e.target.value);
 colorButton.onclick = () => setCurrentMode('color');
@@ -47,12 +40,11 @@ function setupBoard(currentSize) {
 }
 
 function changeBackgroundColor(e) {
-  if(e.type === 'mouseover' && !mouseDown) return;
+  if (e.type === 'mouseover' && !mouseDown) return;
   if (currentMode === "color") {
     e.target.style.backgroundColor = currentColor;
   } else if (currentMode === "rgb") {
     e.target.style.backgroundColor = `rgb(${randomNumberGenerator()}, ${randomNumberGenerator()}, ${randomNumberGenerator()})`;
-    console.log();
   } else if (currentMode === "eraser") {
     e.target.style.backgroundColor = "white";
   }
@@ -61,9 +53,9 @@ function changeBackgroundColor(e) {
 function changeSize(value) {
   setCurrentSize(value);
   updateSizeValue(value);
-  
+
   setupBoard(value);
-  clearBoard()
+  clearBoard();
 }
 
 function updateSizeValue(value) {
@@ -71,7 +63,7 @@ function updateSizeValue(value) {
 }
 
 function clearBoard() {
-  const squares = document.querySelectorAll("#board > div")
+  const squares = document.querySelectorAll("#board > div");
   squares.forEach(square => square.style.backgroundColor = 'white');
 }
 
@@ -90,9 +82,6 @@ function setCurrentSize() {
 function randomNumberGenerator() {
   return Math.floor(Math.random() * 256);
 }
-
-
-// console.log(colorPicker.value);
 
 
 setupBoard(16);
